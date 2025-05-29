@@ -54,11 +54,10 @@ class User extends Authenticatable
     /**
      * Relasi tidak langsung: Mata Kuliah yang diajar (via dosen)
      */
-    public function mataKuliahs()
-    {
-        return $this->dosen ? $this->dosen->mataKuliahs() : collect();
-    }
-
+    public function getMataKuliahsViaDosen()
+{
+    return $this->dosen ? $this->dosen->mataKuliahs : collect();
+}
     /**
      * Cek apakah user adalah dosen
      */

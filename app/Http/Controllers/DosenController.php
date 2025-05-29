@@ -69,7 +69,7 @@ class DosenController extends Controller
 public function matakuliahSaya()
 {
     $dosen = auth()->user();
-    $mataKuliahs = $dosen->mataKuliahs;
+    $mataKuliahs = $dosen->mataKuliahs ?? [];
 
     // view yang benar
     return view('dosen.matakuliah.index', compact('mataKuliahs'));
@@ -108,10 +108,11 @@ public function matakuliahSaya()
     }
     public function dashboard()
 {
-    $dosen = auth()->user();
-    $mataKuliahs = $dosen->mataKuliahs;
+    $user = auth()->user();
+    $mataKuliahs =   $user->dosen->mataKuliahs ?? [];
 
-    return view('Dosen.dashboard', compact('mataKuliahs', 'dosen'));
+    
+    return view('Dosen.dashboard', compact('mataKuliahs', 'user'));
 }
 
 }

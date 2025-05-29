@@ -6,7 +6,7 @@
 
     <div class="card shadow">
         <div class="card-body">
-            <form action="{{ route('dosen.store') }}" method="POST">
+            <form action="{{ route('pengajar.store') }}" method="POST">
                 @csrf
                 <div class="mb-3">
                     <label>NIDN</label>
@@ -25,7 +25,7 @@
                     <input type="password" name="password" class="form-control" required>
                 </div>
                 <button class="btn btn-success">Simpan</button>
-                <a href="{{ route('dosen.index') }}" class="btn btn-secondary">Kembali</a>
+                <a href="{{ route('pengajar.index') }}" class="btn btn-secondary">Kembali</a>
             </form>
         </div>
     </div>

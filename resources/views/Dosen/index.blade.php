@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <h3 class="mb-4">Daftar Dosen</h3>
-    <a href="{{ route('dosen.create') }}" class="btn btn-primary mb-3">+ Tambah Dosen</a>
+    <a href="{{ route('pengajar.create') }}" class="btn btn-primary mb-3">+ Tambah Dosen</a>
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
@@ -35,9 +35,9 @@
                             Atur Mata Kuliah
                         </a>
 
-                        <a href="{{ route('dosen.edit', $dosen->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{{ route('pengajar.edit', $dosen->id) }}" class="btn btn-warning btn-sm">Edit</a>
 
-                        <form action="{{ route('dosen.destroy', $dosen->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('pengajar.destroy', $dosen->id) }}" method="POST" style="display:inline;">
                             @csrf @method('DELETE')
                             <button class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus?')">Hapus</button>
                         </form>

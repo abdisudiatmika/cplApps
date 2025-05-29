@@ -16,8 +16,10 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
+Route::get('dosendashboard', [DosenController::class, 'dashboard'])->name('dosendashboard');
+
 // Resource CRUD
-Route::resource('dosen', DosenController::class);
+Route::resource('pengajar', DosenController::class);
 Route::resource('cpl', CplController::class);
 Route::resource('mahasiswa', MahasiswaController::class);
 Route::resource('mata-kuliah', MataKuliahController::class);
@@ -27,14 +29,12 @@ Route::get('/bobot-cpl/create', [BobotCplController::class, 'create'])->name('bo
 Route::post('/bobot-cpl/store', [BobotCplController::class, 'store'])->name('bobot-cpl.store');
 
 // Dosen Routes
-Route::get('/dosen/dashboard', [DosenController::class, 'dashboard'])->name('Dosen.dashboard');
 Route::get('/dosen/matakuliah/{id}/bobot-cpl', [BobotCplController::class, 'dosenCreate'])->name('dosen.bobot-cpl');
 Route::post('/dosen/matakuliah/{id}/bobot-cpl', [BobotCplController::class, 'dosenStore'])->name('dosen.bobot-cpl.store');
-Route::get('/dosen', [DosenController::class, 'index'])->name('dosen.index');
 
 // Dashboard
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return redirect('/cpl');
 })->name('dashboard');
 
 // Logout

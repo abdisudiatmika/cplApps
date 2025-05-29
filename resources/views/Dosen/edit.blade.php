@@ -5,7 +5,7 @@
 
     <div class="card shadow">
         <div class="card-body">
-            <form action="{{ route('dosen.update', $dosen->id) }}" method="POST">
+            <form action="{{ route('pengajar.update', $dosen->id) }}" method="POST">
                 @csrf @method('PUT')
                 <div class="mb-3">
                     <label>NIDN</label>
@@ -24,7 +24,7 @@
                     <input type="password" name="password" class="form-control">
                 </div>
                 <button class="btn btn-primary">Update</button>
-                <a href="{{ route('dosen.index') }}" class="btn btn-secondary">Kembali</a>
+                <a href="{{ route('pengajar.index') }}" class="btn btn-secondary">Kembali</a>
             </form>
         </div>
     </div>

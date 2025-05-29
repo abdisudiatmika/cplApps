@@ -16,4 +16,9 @@ protected $fillable = ['nim', 'nama', 'program_studi', 'semester', 'kelas'];
     {
         return $this->hasMany(NilaiMahasiswa::class);
     }
+    public function kelas()
+{
+    return $this->belongsToMany(Kelas::class, 'kelas_mahasiswa');
+}
+
 }

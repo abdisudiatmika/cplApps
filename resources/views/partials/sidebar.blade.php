@@ -19,20 +19,21 @@
 
     <!-- Nav Item - Dosen -->
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('dosen.index') }}">
+        <a class="nav-link" href="{{ route('pengajar.index') }}">
             <i class="fas fa-user-tie"></i>
             <span>Dosen</span>
         </a>
     </li>
 
     <!-- Nav Item - CPL -->
+    @if(auth()->user()->role == 'admin')
     <li class="nav-item">
         <a class="nav-link" href="{{ route('cpl.index') }}">
             <i class="fas fa-list"></i>
             <span>CPL</span>
         </a>
     </li>
-
+    @endif
     <!-- Nav Item - Mahasiswa -->
     <li class="nav-item">
         <a class="nav-link" href="{{ route('mahasiswa.index') }}">
@@ -58,7 +59,7 @@
 </li>
 <!-- Nav Item - MK Dosen -->
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('Dosen.dashboard') }}">
+    <a class="nav-link" href="{{ route('dosendashboard') }}">
         <i class="fas fa-chalkboard-teacher"></i>
         <span>Mata Kuliah Dosen</span>
     </a>

@@ -36,4 +36,9 @@ class Dosen extends Authenticatable // ← pakai ini jika login
 {
     return $this->belongsTo(User::class, 'nidn', 'nidn');
 }
+public function kelas()
+{
+    return $this->hasMany(Kelas::class);
+}
+
 }
